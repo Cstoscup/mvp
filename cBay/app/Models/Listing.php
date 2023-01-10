@@ -14,4 +14,8 @@ class Listing extends Model
         return $this->hasMany(Photo::class);
     }
 
+    public function tag()
+    {
+        return $this->hasMany(Tag::class);
+    }
 }
