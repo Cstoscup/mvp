@@ -242,14 +242,70 @@ body {
   text-align: center;
 }
 
-.linkedin {
-  color: #e53238;
+.sell-button {
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px 15px;
   font-weight: bold;
+  text-transform: uppercase;
+  transition: all 150ms ease-in-out;
 }
 
-.linkedin:hover {
-  color: #e53238;
-  text-decoration: underline;
+.sell-button:hover {
+  color: #f5af02;
+  border: 2px solid #f5af02;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.new-listing-form {
+  display: flex;
+  flex-direction: column;
+  width: 855px;
+  margin: 0 auto 30px;
+}
+
+.new-listing-form label {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-photos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-location, .form-contact {
+  display: flex;
+  gap: 10px;
+}
+
+.form-location label, .form-contact label {
+  width: 50%;
+}
+
+.error {
+  color: red;
+  margin-bottom: 0;
+}
+
+.flash-message {
+  position: fixed;
+  font-size: 24px;
+  background-color: #86b817;
+  width: 400px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  left: 50%;
+  margin-left: -200px;
+  top: 10px;
+  opacity: .9;
 }
 
 @media screen and (max-width: 1000px) {

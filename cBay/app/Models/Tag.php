@@ -9,6 +9,8 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['listing_id', 'tag'];
+
     public function listing()
     {
         return $this->belongsTo(Listing::class);
