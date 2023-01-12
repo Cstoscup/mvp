@@ -39,7 +39,7 @@ body {
 
 .hero {
   background-image: url('images/hero.png');
-  height: 400px;
+  height: 350px;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center center;
@@ -50,7 +50,7 @@ body {
   text-transform: uppercase;
   color: white;
   font-size: 80px;
-  padding-top: 100px;
+  line-height: 350px;
   font-weight: 900;
   letter-spacing: 2.5px;
 }
@@ -174,18 +174,44 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  max-width: 1260px;
 }
 
 .listing-photo {
-  width: 300px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  width: 200px;
   height: 200px;
   object-fit: cover;
+}
+
+.edit-photo-form {
+  width: 200px;
+  height: 200px;
+}
+
+.edit-listing-photos, .form-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 17px;
+  width: 855px;
+  margin: 0 auto;
+}
+
+.delete-photo-button {
+  position: relative;
+  top: -195px;
+  left: -8px;
+  float: right;
   border: 1px solid black;
-  border-radius: 4px;
+  background-color: white;
+  border-radius: 50%;
 }
 
 .listing-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   text-transform: uppercase;
   width: fit-content;
@@ -202,6 +228,7 @@ body {
 
 .listing-contact-information {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -308,17 +335,91 @@ body {
   opacity: .9;
 }
 
+.next-page {
+  margin: 30px auto;
+  width: 885px;
+}
+
+.not-a-button {
+  background-color: transparent;
+  border: none;
+}
+
+.user-listings {
+  max-width: 855px;
+  margin: 0 auto;
+}
+
+.user-listing {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.user-listing-title {
+  flex-grow: 1;
+  font-size: 18px;
+  line-height: 48px;
+}
+
+.user-button {
+  border: 2px solid #86b817;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #86b817;
+  color: white;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+.user-button:hover {
+  color: #86b817;
+  background-color: white;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1000px) {
   .hero-title {
     font-size: 65px;
-    padding-top: 110px;
   }
 
   .hero-sign-up-button {
     font-size: 18px;
   }
 
-  .main-listings {
+  .main-listings, .next-page, .search {
     width: 580px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .hero-title {
+    font-size: 50px;
+  }
+
+  .hero-sign-up-button {
+    font-size: 14px;
+  }
+
+  .main-listings, .search {
+    width: 275px;
+  }
+
+  .next-page {
+    width: fit-content;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search input[type=text] {
+    width: 100%;
+  }
+
+  .search input[type=submit] {
+    width: 100%;
+    height: 40px;
   }
 }

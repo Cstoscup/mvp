@@ -6,8 +6,8 @@
     </div>
 
     <div class="listing-tags">
-      @forelse ($listing->tag as $tag)
-        <a class="listing-tag" href="/?tag={{$tag->tag}}">{{$tag->tag}}</a>
+      @forelse (explode(', ', $listing->tags) as $tag)
+        <a class="listing-tag" href="/?tag={{$tag}}">{{$tag}}</a>
       @empty
         <p>No tags found</p>
       @endforelse

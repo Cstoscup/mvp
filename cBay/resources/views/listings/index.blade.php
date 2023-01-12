@@ -10,4 +10,7 @@
       <x-listing-card :listing="$listing" />
     @endforeach
   </div>
+  <div class="next-page">
+    {{$listings->links('pagination::bootstrap-5')}}
+  </div>
 </x-layout>
