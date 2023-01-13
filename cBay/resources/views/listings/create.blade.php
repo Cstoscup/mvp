@@ -66,7 +66,7 @@
 
       <label for="email">
         Email:
-        <input type="text" name="email" id="email" placeholder="Example: name@gmail.com" value="{{old('email')}}">
+        <input type="text" name="email" id="email" placeholder="Example: name@gmail.com" value="{{old('email', $email)}}">
         @error('email')
           <p class="error">{{$message}}</p>
         @enderror

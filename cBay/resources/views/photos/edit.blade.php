@@ -27,4 +27,5 @@
       <p>No images found</p>
     @endforelse
   </div>
+  <a href="/listings/manage" class="listing-back-button">Return to Manage Listings</a>
 </x-layout>

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Listing;
+use App\Models\User;
 use App\Models\Photo;
-use App\Models\Tag;
+use App\Models\Listing;
 use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ListingController extends Controller
 {
@@ -26,7 +27,8 @@ class ListingController extends Controller
 
     // show create form
     public function create() {
-        return view('listings.create');
+        $email = Auth::user()->email;
+        return view('listings.create', ['email' => $email]);
     }
 
     // show edit form
@@ -48,59 +50,8 @@ class ListingController extends Controller
         ]);
 
         $listing->update($formFields);
-        $id = $listing->id;
 
-        if ($request->hasFile( key: 'photo-1' )) {
-            $file = $request->file( key: 'photo-1' );
-            $filename = $file->getClientOriginalName();
-            $path = $file->storeAs('photos', $filename, 's3' );
-            Photo::create([
-                'listing_id' => $id,
-                'photo_url' => 'https://cbay.s3.us-east-2.amazonaws.com/' . $path
-            ]);
-        }
-
-        if ($request->hasFile( key: 'photo-2' )) {
-            $file = $request->file( key: 'photo-2' );
-            $filename = $file->getClientOriginalName();
-            $path = $file->storeAs('photos', $filename, 's3' );
-            Photo::create([
-                'listing_id' => $id,
-                'photo_url' => 'https://cbay.s3.us-east-2.amazonaws.com/' . $path
-            ]);
-        }
-
-        if ($request->hasFile( key: 'photo-3' )) {
-            $file = $request->file( key: 'photo-3' );
-            $filename = $file->getClientOriginalName();
-            $path = $file->storeAs('photos', $filename, 's3' );
-            Photo::create([
-                'listing_id' => $id,
-                'photo_url' => 'https://cbay.s3.us-east-2.amazonaws.com/' . $path
-            ]);
-        }
-
-        if ($request->hasFile( key: 'photo-4' )) {
-            $file = $request->file( key: 'photo-4' );
-            $filename = $file->getClientOriginalName();
-            $path = $file->storeAs('photos', $filename, 's3' );
-            Photo::create([
-                'listing_id' => $id,
-                'photo_url' => 'https://cbay.s3.us-east-2.amazonaws.com/' . $path
-            ]);
-        }
-
-        if ($request->hasFile( key: 'photo-5' )) {
-            $file = $request->file( key: 'photo-5' );
-            $filename = $file->getClientOriginalName();
-            $path = $file->storeAs('photos', $filename, 's3' );
-            Photo::create([
-                'listing_id' => $id,
-                'photo_url' => 'https://cbay.s3.us-east-2.amazonaws.com/' . $path
-            ]);
-        }
-
-        return redirect('/listings/manage')->with('message', 'Listing updated successfully!');
+        return back()->with('message', 'Listing updated successfully!');
     }
 
     // store new listing data in database

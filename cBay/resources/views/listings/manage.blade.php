@@ -6,9 +6,9 @@
     @endif
     @foreach($listings as $listing)
       <div class="user-listing">
-        <div class="user-listing-title">
+        <a class="user-listing-title" href="/listings/{{$listing->id}}">
           {{$listing->title}}
-        </div>
+        </a>
         <a href="/listings/{{$listing->id}}/edit" class="user-button">
           Edit Information
         </a>
@@ -24,7 +24,5 @@
       </div>
     @endforeach
   </div>
-  {{-- <div class="next-page">
-    {{$listings->links('pagination::bootstrap-5')}}
-  </div> --}}
+  <a href="/" class="listing-back-button">Return Home</a>
 </x-layout>

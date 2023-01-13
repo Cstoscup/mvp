@@ -63,7 +63,7 @@ class PhotoController extends Controller
             ]);
         }
 
-        return redirect("/listings/manage")->with('message', 'Photos added successfully!');
+        return back()->with('message', 'Photos added successfully!');
     }
 
     // show edit form
@@ -71,13 +71,13 @@ class PhotoController extends Controller
         return view('/photos.edit', ['photos' => $listing->photo, 'id' => $listing->id]);
     }
 
-    // delete listing
+    // delete photo
     public function delete(Photo $photo) {
         $id = $photo->listing_id;
 
         $photo->delete();
 
-        return redirect("/listings/manage")->with('message', 'Photo deleted successfully!');
+        return back()->with('message', 'Photo deleted successfully!');
     }
 
 }

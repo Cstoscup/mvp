@@ -19,16 +19,16 @@
       </a>
     </div>
     @auth
-      <div class="heading-buttons">Welcome {{Auth::user()->name}}!</div>
-      <a class="heading-buttons" href="/listings/manage"><i class="fa-solid fa-pen-to-square"></i> Manage Listings</a>
+      <div class="welcome-message">Welcome, {{Auth::user()->name}}!</div>
+      <a class="heading-buttons" href="/listings/manage">Manage Listings</a>
       <form action="/logout" method="POST" class="heading-buttons">
         @csrf
-        <button class="not-a-button"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+        <button class="not-a-button">Logout</button>
       </form>
     @endauth
     @guest
-      <a class="heading-buttons" href="/register"><i class="fa-solid fa-user-plus register"></i> Register</a>
-      <a class="heading-buttons" href="/login"><i class="fa-solid fa-right-to-bracket login"></i> Login</a>
+      <a class="heading-buttons" href="/register">Register</a>
+      <a class="heading-buttons" href="/login">Login</a>
     @endguest
 
   </div>
@@ -37,7 +37,7 @@
     {{$slot}}
   </div>
   <div class="footer">
-    <a class="sell-button" href="/listings/create">Post Item for Sale</a>
+    <a class="sell-button" href="/listings/create">List an item</a>
   </div>
 </body>
 </html>

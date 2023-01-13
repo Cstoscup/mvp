@@ -1,6 +1,6 @@
 <x-layout>
   <form enctype="multipart/form-data" class="new-listing-form" action="/listings/{{$listing->id}}" method="POST">
-    <h2>Edit Listing</h2>
+    <h2>Edit Information</h2>
     @csrf
     @method('PUT')
 
@@ -73,4 +73,5 @@
     </div>
     <input type="submit" value="Update Listing">
   </form>
+  <a href="/listings/manage" class="listing-back-button">Return to Manage Listings</a>
 </x-layout>
