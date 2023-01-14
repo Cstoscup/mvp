@@ -29,6 +29,7 @@ body {
   color: #0064d2;
   transition: all 150ms ease-in-out;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  text-align: center;
 }
 
 .heading-buttons:hover {

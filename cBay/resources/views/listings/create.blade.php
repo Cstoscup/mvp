@@ -83,4 +83,5 @@
     </div>
     <input type="submit" value="Add Listing">
   </form>
+  <a href="/" class="listing-back-button">Return Home</a>
 </x-layout>
